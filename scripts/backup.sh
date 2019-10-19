@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # name of the ethernet gadget interface on the host
-UNIT_HOSTNAME=${1:-10.0.0.2}
+UNIT_HOSTNAME=${1:-11.0.0.2}
 # output backup zip file
 OUTPUT=${2:-pwnagotchi-backup.zip}
 # temporary folder
@@ -10,13 +10,12 @@ TEMP_BACKUP_FOLDER=/tmp/pwnagotchi_backup
 FILES_TO_BACKUP=(
   /root/brain.nn
   /root/brain.json
-  /root/.api-report.json
   /root/handshakes
   /etc/pwnagotchi/
   /etc/hostname
   /etc/hosts
-  /etc/motd
   /var/log/pwnagotchi.log
+  /etc/network/interfaces.d/usb0-cfg
 )
 
 ping -c 1 $UNIT_HOSTNAME >/dev/null || {
