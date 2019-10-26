@@ -16,6 +16,7 @@ FILES_TO_BACKUP=(
   /etc/hosts
   /var/log/pwnagotchi.log
   /etc/network/interfaces.d/usb0-cfg
+  /root/.api-enrollment.json
 )
 
 ping -c 1 $UNIT_HOSTNAME >/dev/null || {
